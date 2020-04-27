@@ -3,9 +3,9 @@ This module helps in implementing client and server for federated learning. It i
 
 
 ## Project Mentor:
-*Mr. Souryasekhar 
+* Mr. Souryasekhar 
 
 ## Project Team:
-*Vatsal Singhal<br />
-*Piyush Chauhan<br />
-*Umang Jain
+* Vatsal Singhal<br />
+* Piyush Chauhan<br />
+* Umang Jain
