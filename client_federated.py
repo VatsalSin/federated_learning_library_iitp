@@ -20,7 +20,7 @@ dataset = dataCleaner(pd.read_csv('train.csv'))
 X = dataset.iloc[:, 2:19].values
 y = dataset.iloc[:, 1].values
 X = preprocessing(X)
-startFederatedLearning(host, port, pport, weights, getModel, X, y,100)
+startFederatedLearning(host, port, pport, weights, getModel, X, y,200,batchsize=32)
 
 
 
