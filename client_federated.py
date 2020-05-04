@@ -1,6 +1,7 @@
 import tensorflow as tf
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
 from sklearn.preprocessing import StandardScaler
+from sklearn.ensemble import RandomForestRegressor
 from keras.models import Sequential
 from keras.layers import Dense
 import numpy as np
@@ -17,9 +18,9 @@ weights = requestWeights(host, port)
 getModel = requestModelGen(host, port)
 dataCleaner = requestDataCleaner(host,port)
 dataset = dataCleaner(pd.read_csv('train.csv'))
-X = dataset.iloc[:, 2:19].values
-y = dataset.iloc[:, 1].values
-X = preprocessing(X)
+X = dataset
+y = dataset.iloc[:, 1]
+X = preprocessing(X).iloc[:, 1:18].values # Selecting only input features
 startFederatedLearning(host, port, pport, weights, getModel, X, y,200,batchsize=32)
 
 
