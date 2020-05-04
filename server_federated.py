@@ -86,8 +86,8 @@ def get_model():
     model.compile(optimizer = 'adam', loss = 'binary_crossentropy', metrics = ['accuracy'])
 	return model
 
-dataset = pd.read_csv('Churn_Modelling.csv')
-X = dataset.iloc[:, 3:13].values
-y = dataset.iloc[:, 13].values
+dataset = pd.read_csv('train.csv')
+X = dataset.iloc[:, 2:19].values
+y = dataset.iloc[:, 1].values
 X = preprocessing(X)
 createServer("", 5000, 5001, 10, 2, 2, 70, X, y, get_model, preprocessing, cleanData)

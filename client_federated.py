@@ -16,9 +16,9 @@ preprocessing = requestPreprocessing(host, port)
 weights = requestWeights(host, port)
 getModel = requestModelGen(host, port)
 dataCleaner = requestDataCleaner(host,port)
-dataset = dataCleaner(pd.read_csv('Churn_Modelling.csv'))
-X = dataset.iloc[:, 3:13].values
-y = dataset.iloc[:, 13].values
+dataset = dataCleaner(pd.read_csv('train.csv'))
+X = dataset.iloc[:, 2:19].values
+y = dataset.iloc[:, 1].values
 X = preprocessing(X)
 startFederatedLearning(host, port, pport, weights, getModel, X, y,100)
 
